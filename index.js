@@ -1,12 +1,13 @@
-const form = document.querySelector('form');
-const numberInput = form.querySelector('input[name="number"]');
-const addNumberButton = form.querySelector('button');
-const numberBankOutput = document.querySelector('#numberBank output');
-const sortOneButton = document.querySelector('#sortOne');
-const sortAllButton = document.querySelector('#sortAll');
-const oddsOutput = document.querySelector('#odds output');
-const evensOutput = document.querySelector('#evens output');
+//Odds and Evens homework
 
+const form = document.querySelector("form");
+const numberInput = form.querySelector('input[name="number"]');
+const addNumberButton = form.querySelector("button");
+const numberBankOutput = document.querySelector("#numberBank output");
+const sortOneButton = document.querySelector("#sortOne");
+const sortAllButton = document.querySelector("#sortAll");
+const oddsOutput = document.querySelector("#odds output");
+const evensOutput = document.querySelector("#evens output");
 
 const state = {
   numberBank: [],
@@ -14,9 +15,9 @@ const state = {
   evenNumbers: [],
 };
 
-form.addEventListener('submit', addNumber);
-sortOneButton.addEventListener('click', sortOne);
-sortAllButton.addEventListener('click', sortAll);
+form.addEventListener("submit", addNumber);
+sortOneButton.addEventListener("click", sortOne);
+sortAllButton.addEventListener("click", sortAll);
 
 function addNumber(event) {
   event.preventDefault();
@@ -25,7 +26,7 @@ function addNumber(event) {
     state.numberBank.push(inputNumber);
     render();
   }
-  numberInput.value = '';
+  numberInput.value = "";
 }
 
 function sortOne() {
@@ -51,7 +52,7 @@ function sortAll() {
 }
 
 function render() {
-  numberBankOutput.textContent = state.numberBank.join(', ');
-  oddsOutput.textContent = state.oddNumbers.join(', ');
-  evensOutput.textContent = state.evenNumbers.join(', ');
+  numberBankOutput.textContent = state.numberBank.join(", ");
+  oddsOutput.textContent = state.oddNumbers.join(", ");
+  evensOutput.textContent = state.evenNumbers.join(", ");
 }
